@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Web3 from "web3"
 import Web3Modal from "web3modal"
 import logo from '../../img/logo5.JPG'
+import logo1 from '../../img/logo.svg'
 import ellipseAddress from '../../utils/ellipseAddress'
 import { setAlert } from '../../actions/alert'
 
@@ -70,11 +71,12 @@ const Dashboard = ({ setAlert }) => {
       <div className='container-fluid'>
         <div className='row bg-dark header-box-shadow'>
           <div className='col-md-4 p-4'>
-            <img src={logo} alt='SETIMAGE' height='40px' />
+            <img src={logo1} alt='SETIMAGE' height='40px' />
           </div>
           <div className='col-md-4 text-center text-primary h3 p-4'>
-            <i className='fa fa-university'></i>
-            <span className='ml-2'>NODE NFT PORTAL</span>
+            {/* <i className='fa fa-university'></i>
+            <span className='ml-2'>NODE NFT PORTAL</span> */}
+            <img src={logo} alt='SETIMAGE' height='40px' />
           </div>
           <div className='col-md-4 text-right p-4'>
             {walletAddress
@@ -105,15 +107,15 @@ const Dashboard = ({ setAlert }) => {
           <div className='h1'>22</div>
         </div>
         <div className='d-flex justify-content-center align-items-end mt-3'>
-          <div className='text-center mint-change'>
-            <i onClick={() => mintValueDecrement()} className="fa fa-minus h3 mr-3 font-weight-lighter cursor-pointer"></i>
+          <div className='d-flex align-items-center text-center mint-change'>
+            <i onClick={() => mintValueDecrement()} className="fa fa-minus h6 mr-3 font-weight-lighter cursor-pointer"></i>
             <input
               type='number'
               value={mintValue}
               className='stack-input h3'
               onChange={e => setMintValue(e.target.value)}
             />
-            <i onClick={() => mintValueIncrement()} className="fa fa-plus h3 ml-3 font-weight-lighter cursor-pointer"></i>
+            <i onClick={() => mintValueIncrement()} className="fa fa-plus h6 ml-3 font-weight-lighter cursor-pointer"></i>
           </div>
           <div className='mx-4'>
             <label>Choose Currency</label>
