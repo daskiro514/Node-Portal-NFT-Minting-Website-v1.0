@@ -81,3 +81,7 @@
 .table td, th {
   padding: 7px !important;
 }
+
+.mint-change i, input {
+  margin-bottom: 0px !important;
+}

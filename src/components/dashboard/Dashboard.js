@@ -74,7 +74,7 @@ const Dashboard = ({ setAlert }) => {
           </div>
           <div className='col-md-4 text-center text-primary h3 p-4'>
             <i className='fa fa-university'></i>
-            <span className='ml-2'>Staking</span>
+            <span className='ml-2'>NODE NFT PORTAL</span>
           </div>
           <div className='col-md-4 text-right p-4'>
             {walletAddress
@@ -104,17 +104,26 @@ const Dashboard = ({ setAlert }) => {
           <div className='text-primary mr-3'>My Node NFTs</div>
           <div className='h1'>22</div>
         </div>
-        <div className='text-center'>
-          <i onClick={() => mintValueDecrement()} className="fa fa-minus h3 mr-3 font-weight-lighter cursor-pointer"></i>
-          <input
-            type='number'
-            value={mintValue}
-            className='stack-input h3'
-            onChange={e => setMintValue(e.target.value)}
-          />
-          <i onClick={() => mintValueIncrement()} className="fa fa-plus h3 ml-3 font-weight-lighter cursor-pointer"></i>
-        </div>
-        <div className='text-center mt-4'>
+        <div className='d-flex justify-content-center align-items-end mt-3'>
+          <div className='text-center mint-change'>
+            <i onClick={() => mintValueDecrement()} className="fa fa-minus h3 mr-3 font-weight-lighter cursor-pointer"></i>
+            <input
+              type='number'
+              value={mintValue}
+              className='stack-input h3'
+              onChange={e => setMintValue(e.target.value)}
+            />
+            <i onClick={() => mintValueIncrement()} className="fa fa-plus h3 ml-3 font-weight-lighter cursor-pointer"></i>
+          </div>
+          <div className='mx-4'>
+            <label>Choose Currency</label>
+            <select className='form-control text-white bg-dark'>
+              <option>STACK</option>
+              <option>USDT</option>
+              <option>USDC</option>
+              <option>DAI</option>
+            </select>
+          </div>
           <div>
             <button className='btn btn-primary rounded-pill'>
               Mint Node NFT
@@ -172,7 +181,7 @@ const Dashboard = ({ setAlert }) => {
                           <td className='align-middle'>10.55</td>
                           <td className='align-middle'>10.55</td>
                           <td className='align-middle'>
-                            <button style={{width: '80px'}} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
+                            <button style={{ width: '80px' }} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
                           </td>
                         </tr>
                       )}
@@ -217,7 +226,7 @@ const Dashboard = ({ setAlert }) => {
                                 <td className='align-middle'>10.55</td>
                                 <td className='align-middle'>10.55</td>
                                 <td className='align-middle'>
-                                  <button style={{width: '80px'}} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
+                                  <button style={{ width: '80px' }} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
                                 </td>
                               </tr>
                             )}
