@@ -22,6 +22,7 @@ const Dashboard = ({ setAlert }) => {
   // const [provider, setProvider] = React.useState(null)
   // const [web3, setWeb3] = React.useState(null)
   const [walletAddress, setWalletAddress] = React.useState(null)
+  const [showModal, setShowModal] = React.useState('none')
 
   const [mintValue, setMintValue] = React.useState(2)
   const mintMaxValue = 50
@@ -74,8 +75,6 @@ const Dashboard = ({ setAlert }) => {
             <img src={logo1} alt='SETIMAGE' height='40px' />
           </div>
           <div className='col-md-4 text-center text-primary h3 p-4'>
-            {/* <i className='fa fa-university'></i>
-            <span className='ml-2'>NODE NFT PORTAL</span> */}
             <img src={logo} alt='SETIMAGE' height='40px' />
           </div>
           <div className='col-md-4 text-right p-4'>
@@ -102,32 +101,13 @@ const Dashboard = ({ setAlert }) => {
         </div>
       </div>
       <div className='container'>
-        <div className='d-flex justify-content-center align-items-center mt-4'>
-          <div className='text-primary mr-3'>My Node NFTs</div>
-          <div className='h1'>22</div>
-        </div>
-        <div className='d-flex justify-content-center align-items-end mt-3'>
-          <div className='d-flex align-items-center text-center mint-change'>
-            <i onClick={() => mintValueDecrement()} className="fa fa-minus h6 mr-3 font-weight-lighter cursor-pointer"></i>
-            <input
-              type='number'
-              value={mintValue}
-              className='stack-input h3'
-              onChange={e => setMintValue(e.target.value)}
-            />
-            <i onClick={() => mintValueIncrement()} className="fa fa-plus h6 ml-3 font-weight-lighter cursor-pointer"></i>
+        <div className='d-flex justify-content-center align-items-center mt-5'>
+          <div className='d-flex justify-content-center align-items-center mx-3'>
+            <div className='text-primary mr-3'>My Node NFTs</div>
+            <div className='h1'>22</div>
           </div>
-          <div className='mx-4'>
-            <label>Choose Currency</label>
-            <select className='form-control text-white bg-dark'>
-              <option>STACK</option>
-              <option>USDT</option>
-              <option>USDC</option>
-              <option>DAI</option>
-            </select>
-          </div>
-          <div>
-            <button className='btn btn-primary rounded-pill'>
+          <div className='mx-3'>
+            <button onClick={() => setShowModal('block')} className='btn btn-primary rounded-pill'>
               Mint Node NFT
             </button>
           </div>
@@ -250,6 +230,46 @@ const Dashboard = ({ setAlert }) => {
             }
           </div>
           <div className='col-md-2'></div>
+        </div>
+      </div>
+      <div className='modal mt-5 pt-5' style={{ display: showModal }}>
+        <div className='modal-dialog'>
+          <div className='modal-content bg-dark box-shadow'>
+            <div className='modal-header box-shadow'>
+              <h5 className='modal-title'>Please Confirm...</h5>
+            </div>
+            <div className='modal-body box-shadow'>
+              <div className='d-flex justify-content-center align-items-end my-3'>
+                <div className='d-flex align-items-center text-center mint-change'>
+                  <i onClick={() => mintValueDecrement()} className="fa fa-minus h6 mr-3 font-weight-lighter cursor-pointer"></i>
+                  <input
+                    type='number'
+                    value={mintValue}
+                    className='stack-input h3'
+                    onChange={e => setMintValue(e.target.value)}
+                  />
+                  <i onClick={() => mintValueIncrement()} className="fa fa-plus h6 ml-3 font-weight-lighter cursor-pointer"></i>
+                </div>
+                <div className='mx-4'>
+                  <label>Choose Currency</label>
+                  <select className='form-control text-white bg-dark'>
+                    <option>STACK</option>
+                    <option>USDT</option>
+                    <option>USDC</option>
+                    <option>DAI</option>
+                  </select>
+                </div>
+                <div>
+                  <label className='pl-2'>Price</label>
+                  <div className='form-control bg-dark text-primary border-0'>400 STACK</div>
+                </div>
+              </div>
+            </div>
+            <div className='modal-footer box-shadow'>
+              <button onClick={() => setShowModal('none')} className='width-60 btn btn-primary rounded-pill btn-sm'>Mint</button>
+              <button onClick={() => setShowModal('none')} className='width-60 btn btn-primary rounded-pill btn-sm'>Cancel</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

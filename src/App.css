@@ -67,7 +67,7 @@
 }
 
 .stack-input {
-  max-width: 100px;
+  max-width: 70px;
   background-color: #16171b;
   color: white;
   border-color: #16171b;
@@ -84,4 +84,8 @@
 
 .mint-change i, input {
   margin-bottom: 0px !important;
+}
+
+.width-60 {
+  min-width: 60px
 }
