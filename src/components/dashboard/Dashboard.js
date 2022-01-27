@@ -172,7 +172,7 @@ const Dashboard = ({ setAlert }) => {
                           <td className='align-middle'>10.55</td>
                           <td className='align-middle'>10.55</td>
                           <td className='align-middle'>
-                            <button className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
+                            <button style={{width: '80px'}} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
                           </td>
                         </tr>
                       )}
@@ -217,7 +217,7 @@ const Dashboard = ({ setAlert }) => {
                                 <td className='align-middle'>10.55</td>
                                 <td className='align-middle'>10.55</td>
                                 <td className='align-middle'>
-                                  <button className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
+                                  <button style={{width: '80px'}} className='btn btn-sm btn-primary rounded-pill'>Pay Fee</button>
                                 </td>
                               </tr>
                             )}
